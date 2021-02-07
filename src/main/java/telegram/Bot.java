@@ -9,17 +9,25 @@ import osc.OSC;
 import java.util.logging.Level;
 
 public class Bot extends TelegramLongPollingBot {
+    
+    private String name;
+    private String token;
     OSC osc = new OSC();
     TextProcessor textProcessor = new TextProcessor();
 
+    public  Bot(String name, String token){
+         this.name = name;
+         this.token = token;
+    }
+    
     @Override
     public String getBotUsername() {
-        return "<put bot name here>";
+        return name;
     }
 
     @Override
     public String getBotToken() {
-        return "<put token here>";
+        return token;
     }
 
     @Override
